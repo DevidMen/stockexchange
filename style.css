@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.inputsearch {
+    width: 600px;
+}
+
+#result {
+    list-style-type: none;
+}
+
+a {
+    align-items: flex-start;
+}
+
+li {
+    margin-bottom: 2px;
+}
+
+a:link {
+    text-decoration: none;
+}
