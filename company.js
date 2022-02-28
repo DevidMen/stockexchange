@@ -4,10 +4,10 @@ async function company() {
     const urlcompany = new URLSearchParams(window.location.search);
     const symbolCompany = urlcompany.get('symbol')
     const url = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbolCompany}`
-    const result = document.getElementById('result')
-    spinner.classList.add('d-none')
     const response = await fetch(url);
     const data = await response.json()
+    const result = document.getElementById('result')
+    spinner.classList.add('d-none')
     console.log(data)
     result.innerHTML += `<img src="${data.profile.image}"><h1>${data.profile.companyName}(${data.profile.sector})</h1> <br>
     Stock Price ${data.profile.price}$ <span id="color">(${data.profile.changesPercentage}%)</span> <br>
@@ -23,8 +23,8 @@ async function chart() {
 
     const urlcompany = new URLSearchParams(window.location.search);
     const symbolCompany = urlcompany.get('symbol')
-    const urlChart = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/${symbolCompany}?serietype=line`
     spinner.classList.remove('d-none')
+    const urlChart = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/${symbolCompany}?serietype=line`
     const response = await fetch(urlChart)
     const data = await response.json()
     console.log(data)

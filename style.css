@@ -17,6 +17,7 @@ a {
 
 li {
     margin-bottom: 2px;
+    list-style-type: none;
 }
 
 a:link {
@@ -25,4 +26,17 @@ a:link {
 
 .myChart {
     width: 1000px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.img {
+    border-radius: 30%;
+    width: 50px;
 }

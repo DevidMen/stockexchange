@@ -15,11 +15,24 @@ myBtn.addEventListener('click', function() {
         const data = await response.json()
         console.log(data)
 
+        let list = '';
         for (let i = 0; i < data.length; i++) {
 
-            result.innerHTML += f `<li><a href="company.html?symbol=${data[i].symbol}"> ${data[i].name}  (${data[i].symbol})</a></li>`
-            spinner.classList.add('d-none')
+
+            const urlTwo = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${data[i].symbol}`
+            const responseTwo = await fetch(urlTwo);
+            const dataTwo = await responseTwo.json()
+            list += `
+            <li>
+                <a href="company.html?symbol=${data[i].symbol}"> 
+                    <img src="${dataTwo.profile.image}">${data[i].name}  (${data[i].symbol})
+                </a>
+                <span id="color" class="${Number(dataTwo.profile.changesPercentage) > 0 ? 'green' : 'red'}">(${dataTwo.profile.changesPercentage}%)</span> 
+            </li>
+            `;
         }
+        spinner.classList.add('d-none')
+        result.innerHTML = `<ul>${list}</ul>`;
 
     }
     stock()
