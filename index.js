@@ -11,11 +11,13 @@ myBtn.addEventListener('click', function() {
     spinner.classList.add("d-none")
     async function stock() {
         spinner.classList.remove('d-none')
-        response = await fetch(url);
-        data = await response.json()
+        const response = await fetch(url);
+        const data = await response.json()
         console.log(data)
+
         for (let i = 0; i < data.length; i++) {
-            result.innerHTML += `<li><a href="company.html?symbol=${data[i].symbol}"> ${data[i].name}  (${data[i].symbol})</a></li>`
+
+            result.innerHTML += f `<li><a href="company.html?symbol=${data[i].symbol}"> ${data[i].name}  (${data[i].symbol})</a></li>`
             spinner.classList.add('d-none')
         }
 
