@@ -22,3 +22,7 @@ li {
 a:link {
     text-decoration: none;
 }
+
+.myChart {
+    width: 1000px;
+}
