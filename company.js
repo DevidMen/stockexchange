@@ -25,8 +25,8 @@ async function chart() {
     const symbolCompany = urlcompany.get('symbol')
     const urlChart = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/${symbolCompany}?serietype=line`
     spinner.classList.remove('d-none')
-    response = await fetch(urlChart)
-    data = await response.json()
+    const response = await fetch(urlChart)
+    const data = await response.json()
     console.log(data)
     const date = [];
     const price = [];
