@@ -1,23 +1,38 @@
 * {
     box-sizing: border-box;
-    margin-top: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mina', sans-serif;
+    font-weight: 700;
 }
 
 .inputsearch {
     width: 600px;
 }
 
-#result {
+.title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#btnsearch {
+    background-color: blue;
+    color: white;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 15px;
     list-style-type: none;
 }
 
 a {
-    align-items: flex-start;
-}
-
-li {
-    margin-bottom: 2px;
-    list-style-type: none;
+    color: black;
 }
 
 a:link {
@@ -36,7 +51,57 @@ a:link {
     color: green;
 }
 
-.img {
-    border-radius: 30%;
+#nameCompany {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.containerResult {
+    display: flex;
+}
+
+.inputContainer {
+    margin-top: 20px;
+}
+
+img {
     width: 50px;
+}
+
+#spinner {
+    position: relative;
+    left: 50%;
+    margin-top: 200px;
+    background-color: white;
+    border: none;
+}
+
+#spinnerTwo {
+    position: relative;
+    left: 50%;
+    margin-top: 300px;
+    background-color: white;
+    border: none;
+}
+
+.charts {
+    padding: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur( 5px);
+}
+
+.description {
+    margin: 10px;
+    padding: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur( 5px);
+}
+
+.companyDetails {
+    text-align: center;
 }

@@ -1,4 +1,4 @@
-const spinner = document.getElementById('spinner')
+const spinner = document.getElementById('spinnerTwo')
 async function company() {
 
     const urlcompany = new URLSearchParams(window.location.search);
@@ -6,16 +6,23 @@ async function company() {
     const url = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbolCompany}`
     const response = await fetch(url);
     const data = await response.json()
-    const result = document.getElementById('result')
-    spinner.classList.add('d-none')
+    const nameCompany = document.getElementById('nameCompany')
+    const descriptionCompany = document.getElementById('descriptionCompany')
+    const linkCompany = document.getElementById('linkCompany')
+    spinner.classList.remove('d-none')
     console.log(data)
-    result.innerHTML += `<img src="${data.profile.image}"><h1>${data.profile.companyName}(${data.profile.sector})</h1> <br>
-    Stock Price ${data.profile.price}$ <span id="color">(${data.profile.changesPercentage}%)</span> <br>
-    <a href="${data.profile.website}"> ${data.profile.website}</a> <br>
-    ${data.profile.description}`
+
+    nameCompany.innerHTML = `<h1>${data.profile.companyName}(${data.profile.sector})</h1> <img src="${data.profile.image}">`
+
+    linkCompany.innerHTML = `<a href="${data.profile.website}"> ${data.profile.website}</a>`
+
+    descriptionCompany.innerHTML = `Stock Price ${data.profile.price}$ <span id="color">(${data.profile.changesPercentage}%)</span> <br>
+    ${data.profile.description}}`
+
     if (Number(data.profile.changesPercentage) > 0) {
         document.getElementById('color').style.color = "green"
     } else { document.getElementById('color').style.color = "red" }
+    spinner.classList.add('d-none')
 }
 company()
 
@@ -49,6 +56,6 @@ async function chart() {
             }]
         },
     });
-    spinner.classList.add('d-none')
+
 }
 chart()
