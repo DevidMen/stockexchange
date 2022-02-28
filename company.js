@@ -6,8 +6,8 @@ async function company() {
     const url = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbolCompany}`
     const result = document.getElementById('result')
     spinner.classList.add('d-none')
-    response = await fetch(url);
-    data = await response.json()
+    const response = await fetch(url);
+    const data = await response.json()
     console.log(data)
     result.innerHTML += `<img src="${data.profile.image}"><h1>${data.profile.companyName}(${data.profile.sector})</h1> <br>
     Stock Price ${data.profile.price}$ <span id="color">(${data.profile.changesPercentage}%)</span> <br>
