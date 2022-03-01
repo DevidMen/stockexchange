@@ -126,3 +126,38 @@ img {
 .secondImg {
     width: 100px;
 }
+
+.banner {
+    display: flex;
+}
+
+.bannerContainer {
+    position: relative;
+    overflow: hidden;
+    --offset: 20vw;
+    --move-final: calc(-25% + var(--offset));
+    --move-initial: calc(-50% + var(--offset));
+}
+
+.banner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 40s infinite;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.bannerContainer span {
+    padding: 5px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+}
