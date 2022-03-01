@@ -127,10 +127,6 @@ img {
     width: 100px;
 }
 
-.banner {
-    display: flex;
-}
-
 .bannerContainer {
     position: relative;
     overflow: hidden;
