@@ -12,11 +12,11 @@ async function company() {
     spinner.classList.remove('d-none')
     console.log(data)
 
-    nameCompany.innerHTML = `<h1>${data.profile.companyName}(${data.profile.sector})</h1> <img src="${data.profile.image}">`
+    nameCompany.innerHTML = `<h1>${data.profile.companyName}(${data.profile.sector})</h1> <img class="secondImg" src="${data.profile.image}">`
 
-    linkCompany.innerHTML = `<a href="${data.profile.website}"> ${data.profile.website}</a>`
+    linkCompany.innerHTML = `<a href="${data.profile.website}"> ${data.profile.website}</a><br> Stock Price ${data.profile.price}$ <span id="color">(${data.profile.changesPercentage}%)</span> <br>`
 
-    descriptionCompany.innerHTML = `Stock Price ${data.profile.price}$ <span id="color">(${data.profile.changesPercentage}%)</span> <br>
+    descriptionCompany.innerHTML = `
     ${data.profile.description}}`
 
     if (Number(data.profile.changesPercentage) > 0) {

@@ -27,7 +27,7 @@ myBtn.addEventListener('click', function() {
                 <a href="company.html?symbol=${data[i].symbol}"> 
                     <img src="${dataTwo.profile.image}">${data[i].name}  (${data[i].symbol})
                 </a>
-                <span id="color" class="${Number(dataTwo.profile.changesPercentage) > 0 ? 'green' : 'red'}">(${dataTwo.profile.changesPercentage}%)</span> 
+                <span id="color" class="${Number(dataTwo.profile.changesPercentage) > 0 ? 'green' : 'red'}">(${Number(dataTwo.profile.changesPercentage).toFixed(2)}%)</span> 
             </li>
             `;
         }
