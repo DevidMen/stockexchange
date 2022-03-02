@@ -1,4 +1,4 @@
-const spinner = document.getElementById('spinnerTwo')
+const spinner = document.getElementById('spinner')
 async function company() {
 
     const urlcompany = new URLSearchParams(window.location.search);

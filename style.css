@@ -10,9 +10,15 @@
     width: 600px;
 }
 
-.title {
-    text-align: center;
-    margin-top: 10px;
+#form {
+    display: flex;
+}
+
+#spinner {
+    position: absolute;
+    left: 50%;
+    top: 184px;
+    z-index: 9;
 }
 
 #btnsearch {
@@ -55,16 +61,16 @@ a:link {
     text-align: center;
 }
 
-.container {
+#container {
     padding: 20px;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     position: relative;
-    background: rgba( 255, 255, 255, 0.25);
+    background: rgba( 255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
+    backdrop-filter: blur( 0px);
+    -webkit-backdrop-filter: blur( 0px);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18);
 }
@@ -79,22 +85,6 @@ a:link {
 
 img {
     width: 50px;
-}
-
-#spinner {
-    position: relative;
-    left: 50%;
-    margin-top: 200px;
-    background-color: white;
-    border: none;
-}
-
-#spinnerTwo {
-    position: relative;
-    left: 50%;
-    margin-top: 300px;
-    background-color: white;
-    border: none;
 }
 
 .charts {
@@ -127,15 +117,20 @@ img {
     width: 100px;
 }
 
-.bannerContainer {
+.banner {
     position: relative;
     overflow: hidden;
     --offset: 20vw;
     --move-final: calc(-25% + var(--offset));
     --move-initial: calc(-50% + var(--offset));
+    background: rgba( 255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 11.5px);
+    -webkit-backdrop-filter: blur( 11.5px);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.banner {
+#marquee__inner {
     width: fit-content;
     display: flex;
     position: relative;
@@ -143,9 +138,10 @@ img {
     animation: marquee 40s infinite;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    align-items: center;
 }
 
-.bannerContainer span {
+.banner span {
     padding: 5px;
 }
 
