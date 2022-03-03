@@ -6,6 +6,19 @@
     font-weight: 700;
 }
 
+body {
+    background: url(./stocks.jpg);
+}
+
+h1,
+canvas {
+    color: white;
+}
+
+mark {
+    background-color: red;
+}
+
 .inputsearch {
     width: 600px;
 }
@@ -38,7 +51,7 @@ li {
 }
 
 a {
-    color: black;
+    color: white;
 }
 
 a:link {
@@ -59,6 +72,10 @@ a:link {
 
 #nameCompany {
     text-align: center;
+}
+
+#linkCompany {
+    color: white;
 }
 
 #container {
@@ -85,15 +102,16 @@ a:link {
 
 img {
     width: 50px;
+    padding: 3px;
 }
 
 .charts {
-    padding: 45px;
+    padding: 35px;
     margin: 10px;
-    background: rgba( 255, 255, 255, 0.25);
+    background: rgba( 255, 255, 255, 0.6);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
+    backdrop-filter: blur( 20px);
+    -webkit-backdrop-filter: blur( 20px);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18);
 }
@@ -101,10 +119,10 @@ img {
 .description {
     margin: 10px;
     padding: 45px;
-    background: rgba( 255, 255, 255, 0.25);
+    background: rgba( 255, 255, 255, 0.6);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
+    backdrop-filter: blur( 20px);
+    -webkit-backdrop-filter: blur( 20px);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18);
 }

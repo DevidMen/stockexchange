@@ -10,11 +10,12 @@ async function company() {
     const descriptionCompany = document.getElementById('descriptionCompany')
     const linkCompany = document.getElementById('linkCompany')
     spinner.classList.remove('d-none')
-    console.log(data)
 
-    nameCompany.innerHTML = `<h1>${data.profile.companyName}(${data.profile.sector})</h1> <img class="secondImg" src="${data.profile.image}">`
 
-    linkCompany.innerHTML = `<a href="${data.profile.website}"> ${data.profile.website}</a><br> Stock Price ${data.profile.price}$ <span id="color">(${data.profile.changesPercentage}%)</span> <br>`
+    nameCompany.innerHTML = `<h1>${data.profile.companyName}(${data.profile.sector})</h1> <img onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/000000/stock-share.png';"src="${data.profile.image}">`
+
+    linkCompany.innerHTML = `<a href="${data.profile.website}"> ${data.profile.website}</a><br> Stock Price ${data.profile.price}$ <span id="color">(${Number(data.profile.changesPercentage).toFixed(2)}%)</span> <br>`
+
 
     descriptionCompany.innerHTML = `
     ${data.profile.description}}`
@@ -34,7 +35,6 @@ async function chart() {
     const urlChart = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/${symbolCompany}?serietype=line`
     const response = await fetch(urlChart)
     const data = await response.json()
-    console.log(data)
     const date = [];
     const price = [];
     for (let i = data.historical.length - 1; i >= 0; i--) {
