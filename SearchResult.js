@@ -3,12 +3,15 @@ class SearchResult {
         this.element = element
 
     }
+
     renderResults(search) {
 
         const result = this.element
         const url = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/search?query=${search}&limit=10&exchange=NASDAQ`
 
         async function stock() {
+
+
             const spinner = document.getElementById('spinner')
             spinner.classList.remove('d-none')
             const response = await fetch(url);
@@ -19,20 +22,35 @@ class SearchResult {
                 const responseTwo = await fetch(urlTwo);
                 const dataTwo = await responseTwo.json()
 
+
+                const mark = data[i].name;
+                const toMark = mark.replace(new RegExp(search, "gi"), (match) => `<mark>${match}</mark>`);
+                const markTwo = data[i].symbol;
+                const toMarkTwo = markTwo.replace(new RegExp(search, "gi"), (match) => `<mark>${match}</mark>`);
+
+
+
                 list += `
                 <li>
                     <a href="company.html?symbol=${data[i].symbol}"> 
-                        <img onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/000000/stock-share.png';" src="${dataTwo.profile.image}">${data[i].name}  (${data[i].symbol})
+                        <img onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/000000/stock-share.png';" src="${dataTwo.profile.image}">${toMark}(${toMarkTwo})
                     </a>
                     <span id="color" class="${Number(dataTwo.profile.changesPercentage) > 0 ? 'green' : 'red'}">(${Number(dataTwo.profile.changesPercentage).toFixed(2)}%)</span> 
                 </li>
                 `;
-
             }
             result.innerHTML = `<ul>${list}</ul>`;
             spinner.classList.add('d-none')
+
+
+
+
+
+
+
         }
         stock()
+
     }
 
 

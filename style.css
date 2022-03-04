@@ -16,7 +16,7 @@ canvas {
 }
 
 mark {
-    background-color: red;
+    background-color: yellow;
 }
 
 .inputsearch {
@@ -103,6 +103,10 @@ a:link {
 img {
     width: 50px;
     padding: 3px;
+}
+
+.imgTwo {
+    width: 100px;
 }
 
 .charts {

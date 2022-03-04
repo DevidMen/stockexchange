@@ -12,7 +12,7 @@ async function company() {
     spinner.classList.remove('d-none')
 
 
-    nameCompany.innerHTML = `<h1>${data.profile.companyName}(${data.profile.sector})</h1> <img onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/000000/stock-share.png';"src="${data.profile.image}">`
+    nameCompany.innerHTML = `<h1>${data.profile.companyName}(${data.profile.sector})</h1> <img class="imgTwo" onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/000000/stock-share.png';"src="${data.profile.image}">`
 
     linkCompany.innerHTML = `<a href="${data.profile.website}"> ${data.profile.website}</a><br> Stock Price ${data.profile.price}$ <span id="color">(${Number(data.profile.changesPercentage).toFixed(2)}%)</span> <br>`
 
