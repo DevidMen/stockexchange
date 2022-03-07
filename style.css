@@ -40,14 +40,24 @@ mark {
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
     margin-top: 10px;
 }
 
 li {
     margin-bottom: 15px;
     list-style-type: none;
+}
+
+#resultContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btnCompare {
+    padding: 5px;
+    background-color: blue;
+    color: white;
 }
 
 a {
@@ -92,14 +102,6 @@ a:link {
     border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.containerResult {
-    display: flex;
-}
-
-.inputContainer {
-    margin-top: 20px;
-}
-
 img {
     width: 50px;
     padding: 3px;
@@ -133,10 +135,6 @@ img {
 
 .companyDetails {
     text-align: center;
-}
-
-.secondImg {
-    width: 100px;
 }
 
 .banner {

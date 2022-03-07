@@ -11,13 +11,20 @@ class SearchForm {
                 <span class="visually-hidden">Loading...</span>
 
         </div>`
+        const searchrtext = document.getElementById('search')
+        const debounce = (func, wait) => {
+            let debounceTimer
+            return function() {
+                clearTimeout(debounceTimer)
+                debounceTimer
+                    = setTimeout(() => func.apply(), wait)
+            }
+        }
 
+        searchrtext.addEventListener('keyup', debounce(function() {
 
-        const myBtn = document.getElementById('btnsearch')
-
-        myBtn.addEventListener('click', function() {
             const search = document.getElementById('search').value
             callback(search)
-        })
+        }, 1500))
     }
 }
