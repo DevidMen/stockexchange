@@ -43,12 +43,6 @@ class SearchResult {
 
                 result.innerHTML = `${list}`;
 
-                const btnCompare = document.querySelectorAll('.btnCompare')
-                btnCompare.forEach(element => {
-                    addEventListener('click', function() {
-                        console.log(dataTwo.profile)
-                    })
-                });
             }
 
             spinner.classList.add('d-none')
