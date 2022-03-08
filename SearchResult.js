@@ -34,7 +34,7 @@ class SearchResult {
                 list += `
         <div id="resultContainer">
                 <div>
-                    <a href="company.html?symbol=${data[i].symbol}"> 
+                    <a href="Company.html?symbol=${data[i].symbol}"> 
                         <img onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/000000/stock-share.png';" src="${dataCompany.profile.image}">${toMarkName}(${toMarkSymbol})
                     </a>
                     <span id="color" class="${Number(dataCompany.profile.changesPercentage) > 0 ? 'green' : 'red'}">(${Number(dataCompany.profile.changesPercentage).toFixed(2)}%)</span> 
