@@ -18,7 +18,7 @@ async function company() {
 
 
     descriptionCompany.innerHTML = `
-    ${data.profile.description}}`
+    ${data.profile.description}`
 
     if (Number(data.profile.changesPercentage) > 0) {
         document.getElementById('color').style.color = "green"

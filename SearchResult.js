@@ -39,9 +39,6 @@ class SearchResult {
                     </a>
                     <span id="color" class="${Number(dataCompany.profile.changesPercentage) > 0 ? 'green' : 'red'}">(${Number(dataCompany.profile.changesPercentage).toFixed(2)}%)</span> 
               </div>
-              <div class="btnContainer">
-                    <button id="btnCompare type="button" class="btnCompare btn btn-outline-primary">Compare</button>
-              </div>
          </div>
                 `;
 
